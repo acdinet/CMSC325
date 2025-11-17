@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs Flowchart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 2rem;
+        }
+        /* Color Palette: Simplified professional blue/green */
+        .color-terminal { background-color: #3b82f6; color: white; } /* Blue 500 */
+        .color-process { background-color: #10b981; color: white; }  /* Green 500 */
+        .color-io { background-color: #fcd34d; color: #333; }        /* Amber 300 */
+        .color-decision { background-color: #ef4444; color: white; } /* Red 500 */
+        .flow-line { background-color: #9ca3af; } /* Gray 400 */
+    </style>
+</head>
+<body>
+    <div class="flex justify-center">
+        <div class="p-6 bg-white shadow-2xl rounded-xl border-4 border-gray-200">
+            <h1 class="text-2xl font-bold text-center mb-6 text-gray-700">Mad Libs Algorithm Flow</h1>
+
+            <div class="flex flex-col items-center space-y-4">
+
+                <!-- 1. Start Terminal -->
+                <div class="w-48 h-12 flex items-center justify-center color-terminal rounded-full font-bold shadow-md">
+                    Start
+                </div>
+
+                <div class="w-0.5 h-6 flow-line"></div>
+
+                <!-- 2. Initialization Process -->
+                <div class="w-64 h-16 flex items-center justify-center color-process rounded-lg shadow-lg text-center p-2">
+                    Initialize WANT_TO_PLAY = "Yes"
+                </div>
+
+                <div class="w-0.5 h-6 flow-line"></div>
+
+                <!-- 3. Decision Point (Loop Test) -->
+                <div class="w-64 h-20 flex items-center justify-center color-decision rounded-lg shadow-lg text-center p-2 relative border-4 border-white">
+                    <span class="font-bold text-lg">WANT_TO_PLAY == "Yes"?</span>
+                    
+                    <!-- NO Path (Exit) -->
+                    <div class="absolute -right-20 top-1/2 w-20 h-0.5 flow-line"></div>
+                    <span class="absolute -right-12 top-1/2 -translate-y-full text-sm font-semibold text-gray-700">No</span>
+                </div>
+                
+                <div class="flex w-full justify-center relative">
+                    <!-- YES Path Down -->
+                    <div class="w-0.5 h-6 flow-line"></div>
+                    <span class="absolute top-0 mt-2 text-sm font-semibold text-gray-700">Yes</span>
+
+                    <!-- Main Loop Content Container -->
+                    <div class="flex flex-col items-center w-full max-w-sm space-y-4 mt-8">
+                        
+                        <!-- 4. Input 1 (Gather Variables) -->
+                        <div class="w-full h-24 flex items-center justify-center color-io skew-x-[-6deg] rounded-lg shadow-md p-3 text-center">
+                            <p class="skew-x-[6deg] text-sm"><span class="font-semibold">Input:</span> Get Name, Verbs (2), Nouns (2), Adjectives (2), Integers (2)</p>
+                        </div>
+
+                        <div class="w-0.5 h-6 flow-line"></div>
+
+                        <!-- 5. Process 2 (Assembly) -->
+                        <div class="w-full h-16 flex items-center justify-center color-process rounded-lg shadow-lg text-center p-2">
+                            Assemble the Mad Libs story
+                        </div>
+
+                        <div class="w-0.5 h-6 flow-line"></div>
+
+                        <!-- 6. Output 1 (Display) -->
+                        <div class="w-full h-16 flex items-center justify-center color-io skew-x-[-6deg] rounded-lg shadow-md p-2">
+                            <p class="skew-x-[6deg]"><span class="font-semibold">Output:</span> Display Story</p>
+                        </div>
+
+                        <div class="w-0.5 h-6 flow-line"></div>
+
+                        <!-- 7. Input 2 (Update Sentinel) -->
+                        <div class="w-full h-16 flex items-center justify-center color-io skew-x-[-6deg] rounded-lg shadow-md p-3 text-center">
+                            <p class="skew-x-[6deg]"><span class="font-semibold">Input:</span> Update WANT_TO_PLAY</p>
+                        </div>
+                        
+                        <div class="w-0.5 h-6 flow-line"></div>
+
+                        <!-- 8. Loop Back -->
+                        <div class="h-0.5 w-full flow-line relative">
+                            <div class="absolute right-0 top-1/2 w-0.5 h-12 flow-line translate-x-1/2 -mt-6"></div>
+                            <div class="absolute right-0 top-1/2 w-20 h-0.5 flow-line translate-x-1/2"></div>
+                            <div class="absolute -right-12 top-1/2 w-0.5 h-[340px] flow-line -mt-[340px]"></div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- 9. End Terminal (Connected from 'No' path) -->
+                    <div class="absolute right-[-110px] top-[140px] w-48 h-12 flex items-center justify-center color-terminal rounded-full font-bold shadow-md">
+                        End
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
